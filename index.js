@@ -8,9 +8,9 @@ app.get("/", (req, res) => {
     res.json("Hello, World")
 })
 
-cron.schedule('* * * * *', (now) => {
-    console.log('Run task every minute ' + now);
-});
+cron.schedule('* * * * * *', () => {
+    console.log('running a task every minute');
+  });
 
 app.listen(PORT, () => {
     console.log("Server running port " + PORT);
